@@ -1,1 +1,8 @@
-console.log("Hello world");
+import app from "./app";
+import logger from "./utils/logger";
+
+const PORT = 5000;
+
+app.listen(PORT, () => {
+  logger.info(`Server is running on port ${PORT}`);
+});
