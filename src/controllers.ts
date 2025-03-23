@@ -5,7 +5,7 @@ export function seqnHandler(req: Request, res: Response) {
   const num = parseInt(req.params.num, 10);
 
   const magicNum = calcSeqn(num);
-  successResponse(res, { num, result: magicNum });
+  successResponse(res, magicNum);
 }
 
 /**
@@ -19,7 +19,7 @@ function calcSeqn(num: number) {
 
   let prev2 = 0,
     prev1 = 1,
-    current;
+    current = 0;
   for (let i = 2; i <= num; i++) {
     current = prev1 + prev2 + i;
     prev2 = prev1;
